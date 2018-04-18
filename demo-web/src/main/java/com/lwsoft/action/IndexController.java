@@ -6,11 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.lwsoft.api.DemoInterface;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.lwsoft.api.entity.User;
+import com.lwsoft.api.service.DemoInterface;
 @Controller
 @RequestMapping(value="/index")
 public class IndexController {
-	
+	@Reference(interfaceClass=com.lwsoft.api.service.DemoInterface.class)
 	private DemoInterface demo;
 	
 	private Logger log = Logger.getLogger(IndexController.class);
@@ -22,7 +24,9 @@ public class IndexController {
 	}
 	@RequestMapping("/view")
 	public String view(Model m){
-		m.addAttribute("name", "123");
+		User user = demo.getUser();
+		System.out.println(user.getName());
+		m.addAttribute("name",user.getName());
 		return "view/index";
 	}
 

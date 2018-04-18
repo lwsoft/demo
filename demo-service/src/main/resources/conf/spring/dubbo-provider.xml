@@ -18,25 +18,22 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
 
-	<!-- 使用注解开发，是扫描的包 -->
-	<context:component-scan base-package="com.lwsoft.action" />
-
-
-	<!-- 打开mvc注解 -->
-	<mvc:annotation-driven />
-	<!-- 视图解析器 -->
-	<bean	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property value="org.springframework.web.servlet.view.JstlView"	name="viewClass" />
-		<!-- 配置从项目根目录到指定目录一端路径 ,建议指定浅一点的目录 -->
-		<property name="prefix" value="/"></property>
-		<!-- 文件的后缀名 -->
-		<property name="suffix" value=".jsp"></property>
-	</bean>
-	<!-- 下面这些文件不拦截 -->
-	<mvc:resources location="/js/" mapping="/js/**" />
-	<mvc:resources mapping="/resources/**" location="/resources/" />
-	<mvc:resources mapping="/images/**" location="/images/" />
+	<dubbo:application name="demo-service" />
 	
-	<import resource="dubbo-consumer.xml"/>
+	<!-- zookeeper注册中心 -->
+	<dubbo:registry address="zookeeper://192.168.136.128:2181?backup=192.168.136.129:2181,192.168.136.130:2181"/>
 	
+	
+	<!-- dubbo协议 -->
+	<dubbo:protocol name="dubbo" port="20880"/>
+	
+	
+	<!-- dubbo注释，扫描路径 -->
+	<dubbo:annotation package="com.lwsoft.service"/>
+	
+	<!-- 采用xml配置  
+	<bean id="demoService" class="com.lwsoft.service.DemoServiceImpl"/>
+	
+	<dubbo:service interface="com.lwsoft.api.service.DemoInterface" ref="demoService"/>
+	-->
 </beans>
