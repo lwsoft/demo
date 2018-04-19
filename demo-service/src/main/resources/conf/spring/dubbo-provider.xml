@@ -28,7 +28,7 @@
 	<dubbo:protocol name="dubbo" port="20880"/>
 	
 	
-	<!-- dubbo注释，扫描路径 -->
+	<!-- dubbo注解，扫描路径 -->
 	<dubbo:annotation package="com.lwsoft.service"/>
 	
 	<!-- 采用xml配置  
