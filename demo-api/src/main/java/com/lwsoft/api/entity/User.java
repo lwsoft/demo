@@ -3,25 +3,26 @@ package com.lwsoft.api.entity;
 import java.io.Serializable;
 
 public class User implements Serializable{
-	
-	private String name;
-	
-	private int age;
+   
+	private static final long serialVersionUID = -1831257533693001775L;
 
-	public String getName() {
-		return name;
-	}
+	private String userName;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    private Integer age;
 
-	public int getAge() {
-		return age;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
+    }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }

@@ -76,6 +76,13 @@
 		</dependency>
 
 		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.46</version>
+		</dependency>
+
+
+		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.4.6</version>
@@ -99,6 +106,11 @@
 			<version>2.12.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.3.14.RELEASE</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -117,6 +129,20 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.3.14.RELEASE</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.3.14.RELEASE</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>4.3.14.RELEASE</version>
+		</dependency>
+
 
 	</dependencies>
 	<build>

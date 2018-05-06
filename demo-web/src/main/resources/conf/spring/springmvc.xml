@@ -18,15 +18,25 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
 
+	<!--配置json适配器 -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+
+
 	<!-- 使用注解开发，是扫描的包 -->
 	<context:component-scan base-package="com.lwsoft.action" />
 
 
-	<!-- 打开mvc注解 -->
-	<mvc:annotation-driven />
+
 	<!-- 视图解析器 -->
-	<bean	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property value="org.springframework.web.servlet.view.JstlView"	name="viewClass" />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property value="org.springframework.web.servlet.view.JstlView"
+			name="viewClass" />
 		<!-- 配置从项目根目录到指定目录一端路径 ,建议指定浅一点的目录 -->
 		<property name="prefix" value="/"></property>
 		<!-- 文件的后缀名 -->
@@ -36,7 +46,7 @@
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<mvc:resources mapping="/images/**" location="/images/" />
-	
-	<import resource="dubbo-consumer.xml"/>
-	
+
+	<import resource="dubbo-consumer.xml" />
+
 </beans>
