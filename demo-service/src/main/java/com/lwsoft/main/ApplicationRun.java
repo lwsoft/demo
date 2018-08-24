@@ -1,4 +1,4 @@
-package com.lwsoft.service.main;
+package com.lwsoft.main;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
