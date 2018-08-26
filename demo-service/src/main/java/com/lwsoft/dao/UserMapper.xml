@@ -10,4 +10,10 @@
  		select * from tb_user;
  	</select>
  	
+ 	<select id="getUserByAge" resultMap="BaseResultMap" parameterType="int">
+ 		select * from tb_user where age = #{age}
+ 	</select>
+ 	
+ 	
+ 	
 </mapper>

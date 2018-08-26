@@ -24,8 +24,12 @@
 	<dubbo:registry address="zookeeper://192.168.136.128:2181?backup=192.168.136.129:2181,192.168.136.130:2181"/>
 	
 	
-	<!-- dubbo协议 -->
-	<dubbo:protocol name="dubbo" port="20880"/>
+	<!-- dubbo协议,kryo序列化  -->
+	<dubbo:protocol name="dubbo" port="20880" serialization="kryo" optimizer="com.lwsoft.api.utils.SerializationOptimizerImpl"/>
+	
+	<!-- 用rest协议在8080端口暴露服务,采用fastjson进行序列化 -->
+	<dubbo:protocol name="rest"  port="8080" server="tomcat" serialization="fastjson" charset="UTF-8"/>
+	
 	
 	
 	<!-- dubbo注解，扫描路径 -->

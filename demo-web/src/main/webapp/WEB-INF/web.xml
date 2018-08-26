@@ -19,7 +19,7 @@
 
 		<param-name>log4jConfigLocation</param-name>
 
-		<param-value>/WEB-INF/classes/conf/log4j.properties</param-value>
+		<param-value>classpath:conf/log4j.properties</param-value>
 
 	</context-param>
 
@@ -56,7 +56,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/classes/conf/spring/springmvc.xml</param-value>
+		<param-value>classpath:conf/spring/springmvc.xml</param-value>
 	</context-param>
 
 	<servlet>

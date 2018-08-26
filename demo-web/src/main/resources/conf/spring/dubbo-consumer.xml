@@ -23,6 +23,10 @@
 	<!-- zookeeper注册中心 -->
 	<dubbo:registry address="zookeeper://192.168.136.128:2181?backup=192.168.136.129:2181,192.168.136.130:2181"/>
 	
+	
+	<!-- dubbo协议,kryo序列化 -->
+	<dubbo:protocol name="dubbo" serialization="kryo" optimizer="com.lwsoft.api.utils.SerializationOptimizerImpl"/>
+	
 	<!-- dubbo注释，扫描路径 -->
 	<dubbo:annotation package="com.lwsoft.action"/>
 	<!--  采用xml

@@ -7,4 +7,6 @@ import com.lwsoft.api.entity.User;
 public interface UserMapper {
 	
    public List<User> getAlluser();
+   
+   public User getUserByAge(Integer age);
 }

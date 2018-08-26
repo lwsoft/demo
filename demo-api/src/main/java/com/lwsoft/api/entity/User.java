@@ -2,7 +2,9 @@ package com.lwsoft.api.entity;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlRootElement
+public class User {//implements Serializable
    
 	private static final long serialVersionUID = -1831257533693001775L;
 

@@ -1,4 +1,4 @@
-package com.lwsoft.service;
+package com.lwsoft.service.impl;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import com.lwsoft.api.service.DemoInterface;
 import com.lwsoft.dao.UserMapper;
 
 @Service("demoService")
-@com.alibaba.dubbo.config.annotation.Service(interfaceClass=com.lwsoft.api.service.DemoInterface.class)
+@com.alibaba.dubbo.config.annotation.Service(interfaceClass=com.lwsoft.api.service.DemoInterface.class,protocol={"dubbo"})
 public class DemoServiceImpl implements DemoInterface {
 	@Autowired
 	UserMapper userMapper;
