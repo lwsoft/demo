@@ -3,8 +3,8 @@ package com.lwsoft.action;
 
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,7 @@ public class IndexController {
 	private DemoInterface demo;
 	
 	
-	private Logger log = Logger.getLogger(IndexController.class);
+	private Logger log = LoggerFactory.getLogger(IndexController.class);
 	
 	@RequestMapping(value="/init")
 	public String init(){
