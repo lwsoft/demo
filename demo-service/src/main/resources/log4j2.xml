@@ -115,8 +115,9 @@
         </logger>
                 <!--建立一个默认的root的logger-->
                 <root level="INFO">
-                        <appender-ref ref="RollingFile"/>
-                        <appender-ref ref="Console"/>
+                		<!-- Console日志是同步、阻塞的，推荐本地调试时使用， 生产环境将该配置去掉 -->
+                		<appender-ref ref="Console"/>
+                        <appender-ref ref="RollingFile"/>                        
                         <appender-ref ref="InfoFile"/>
                         <appender-ref ref="WarnFile"/>
                         <appender-ref ref="ErrorFile"/>
